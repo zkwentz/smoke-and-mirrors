@@ -29,6 +29,7 @@
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
+    "ember-async-image": "^0.1.0",
     "ember-cli": "2.3.0-beta.2",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-changelog": "0.3.4",
@@ -50,7 +51,6 @@
     "ember-resolver": "^2.0.3",
     "ember-run-raf": "^1.1.0",
     "ember-suave": "1.2.3",
-    "ember-async-image": "0.0.1",
     "ember-try": "~0.0.8",
     "ember-tweenlite": "0.1.0",
     "ghooks": "^1.0.0",
