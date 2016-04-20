@@ -122,9 +122,11 @@ export default class Radar {
   }
 
   resizeSatellites() {
-    this.willResizeSatellites();
-    this._resize();
-    this.didResizeSatellites();
+    if (!this.get('isDestroyed') && !this.get('isDestroying')) {
+      this.willResizeSatellites();
+      this._resize();
+      this.didResizeSatellites();
+    }
   }
 
   updateSkyline() {
@@ -290,11 +292,17 @@ export default class Radar {
     this.telescope = null;
     this.sky = null;
 
-    this.planet.destroy();
-    this.planet = null;
-    this.scrollContainer = null;
-    this.skyline.destroy();
-    this.skyline = null;
+    if (this.planet) {
+      this.planet.destroy();
+      this.planet = null;
+    }
+    if (this.scrollContainer) {
+      this.scrollContainer = null;
+    }
+    if (this.skyline) {
+      this.skyline.destroy();
+      this.skyline = null;
+    }
   }
 
 }
