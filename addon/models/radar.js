@@ -122,9 +122,15 @@ export default class Radar {
   }
 
   resizeSatellites() {
-    if (!this.get('isDestroyed') && !this.get('isDestroying')) {
+    if (this.willResizeSatellites) {
       this.willResizeSatellites();
+    }
+
+    if (this._resize) {
       this._resize();
+    }
+
+    if (this.didResizeSatellites) {
       this.didResizeSatellites();
     }
   }
