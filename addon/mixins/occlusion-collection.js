@@ -19,7 +19,11 @@ function valueForIndex(arr, index) {
 function getContent(obj, isProxied) {
   const key = isProxied ? 'content.content' : 'content';
 
-  return get(obj, key);
+  if (!!obj) {
+    return get(obj, key);
+  } else {
+    return [];
+  }
 }
 
 export default Mixin.create({
