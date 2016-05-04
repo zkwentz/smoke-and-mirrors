@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/collection-item';
+import getOwner from 'ember-getowner-polyfill';
 
 const {
   Component
